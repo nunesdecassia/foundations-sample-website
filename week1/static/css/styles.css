@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.container {
+    padding: 2em;
+}
+
+.imageGroup{
+    height: 70vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    font-size: 30px;
+}
+
+img{
+    width: 100%;
+}
+
+.imagestyle{
+    height: 70vh;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+}
+
+footer{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+header li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    opacity: 0.9;
+
+}
+
+a:hover{
+    opacity: 1;
+}
+
+header {
+    position: fixed;
+    padding: 16px;
+    display: flex;
+    /* Smth I need to understand better */
+    flex-direction: row;
+    /* Content alignment in row. It can be in column too */
+    justify-content: space-between;
+    /* To force the menu alignment to right  */
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 2px 8px rgb(0 0 0 / 11%);
+}
+
+header ul{
+align-self: flex-end;
+}
+
+header+main {
+    margin-top: 88px;
+}
+
+.logo{
+    z-index: 9999;
+    color: white;
+    width: 15.2em;
+    height: 3.5em;
+    background: url(../images/logo.svg?1483100240000) no-repeat 0 center;
+    background-size: auto 3.5em;
+}
+
+h1{
+    color: black;
+    padding-top: 0.5em;
+}
+
+.section{
+    display: flex;
+}
+
+.section-item {
+    flex-grow: 1;
+    flex-basis: 0px;
+    margin: 10px;
+    text-align: justify;
+}
+
+.textcenter{
+    text-align: center;
+}
+
+.listconf{
+  list-style-type: disc;
+}
+
+.color1{
+    background-color: blueviolet;
+}
+
+.color2{
+    background-color: rgb(85, 243, 36);
+}
+.color3{
+    background-color: rgb(122, 7, 7);
+}
+
+.formcontainer{
+    margin: auto;
+    max-width: 600px;
+}

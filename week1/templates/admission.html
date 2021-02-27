@@ -1,0 +1,119 @@
+<!-- This is a basic html page which Flask can serve. 
+It does not use the power of Flask, but is easier to read than some of the other files. 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<!-- learn more about what belongs in head and how it is used here 
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML -->
+
+<head>
+    <title> CODE Admissions</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    <header class="color2">
+
+        <div class="logo"> </div>
+
+        <ul>
+            <li> <a href="index.html">Concept</li></a>
+            <li> <a href="second-page.html">Study Programms</li></a>
+            <li> <a href="admission.html">Admissions </li></a>
+        </ul>
+
+    </header>
+
+    <main>
+
+        <div class="imageGroup">
+            <div class="imagestyle">
+                <img src="../static/images/4.jpg">
+            </div>
+
+            <div class="container">
+                <h2>Are we a perfect match?</h2>
+                <p> At CODE we want to attract the most talented and passionate students,
+                    not the most privileged. In our admission process, we aim to challenge your drive
+                    and curiosity. </p>
+            </div>
+        </div>
+
+        <div class="container textcenter">
+
+            <h1>You can start applying now!</h1>
+            <p>Application deadlines: EU residents: 15th of July 2021;
+                applicants requiring a study visa: 6th of June</p>
+        </div>
+
+        <div class="container section">
+            <div class="section-item">
+                <h2>Most important information</h2>
+
+                <ul class="listconf">
+                    <li>State-accredited Bachelor in Software Engineering, <br>
+                        Product Management, Interaction Design</li>
+                    <li>Standard period of study: 3 years (6 semesters)</li>
+                    <li>Classes begin in September, but the onboarding end of August</li>
+                    <li>All 3 programs are taught in English</li>
+                    <li>Face-to-face study program in Berlin (no distance learning)</li>
+                    <li>Study abroad opportunities</li>
+                </ul>
+            </div>
+
+
+            <div class="section-item">
+                <h2>Some interesting facts</h2>
+                <ul class="listconf">
+                    <li>CODE stands for “curiosity-driven education”</li>
+                    <li>Project-based learning</li>
+                    <li>Our partner companies: Porsche, Bosch, Telekom Innovation Laboritories and many more</li>
+                    <li>An amazing community of more than 500 students from all over the world</li>
+                    <li>Our Science Technology and Society (STS) course offers students an “applied”<br>
+                        approach to philosophical issues like AI, Big Data, Privacy Rights, etc. and its implications
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="container color2">
+            <div class="formcontainer">
+
+                <h1 class="textcenter">Apply now!</h1>
+                <p>By registering for our application process, you will receive an email from us with an 
+                    invitation to set up your personal account.<br>
+                    If you don’t confirm your account, we will delete the account after three weeks and 
+                    you would need to signup again.</p>
+
+                <form method="GET">
+                    <div class="section">
+                        <div class="section-item">
+                            <label for="first-name">First Name:</label> 
+                            <input id="first-name" type="text" name="firstname" required>
+                        </div>
+                        <div class="section-item">
+                            <label for="last-name">Last Name:</label> 
+                            <input id="last-name" type="text" name="lastname" required>
+                        </div>
+                    </div>
+
+                    <label for="email">Email:</label> 
+                    <input id="email" type="email" name="email" required>
+
+                    <button type="submit">
+                        Register for application
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
