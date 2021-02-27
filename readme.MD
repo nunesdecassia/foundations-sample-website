@@ -56,7 +56,11 @@ This will make a copy of the Python application - the programming language itsel
 
 After creating your new virtual environment (making a local copy of Python), you need to tell your terminal to use that new version of Python, instead of the one on your whole computer. To do this, we use the activate script: 
 
+On Linux use:
 `source venv/bin/activate`
+
+On Windows use:
+`.\venv\Scripts\activate`
 
 Depending on how your terminal is configured, you may see something like `(venv)` added to the prompt (the prompt is the part to the left of your cursor. It may show your directory or username, for instance). 
 
@@ -68,7 +72,10 @@ Now we have our very own version of Python for this project which we can play ar
 
 To install the libraries we need, we will use the command `pip`. Pip is a tool to help us manage (install, check versions, etc..) the external python code we are installing. We could use the command pip and give it a specific package name, but that would be a lot of typing, hard to reproduce, and easy to make mistakes. We will use a file called `requirements.txt`, which lists the packages and their specific versions that we need. Have a look at that file now, sitting in the repository. This is a big step towards having a reproducible environment - which is a fancy way of saying that you have confidence that your software will continue to run. Because we are using the same versions of the same libraries on all students' computers and on the servers we will rent from Google Cloud later, we can be relatively confident that it works as expected. It happens all the time that someone updates a library that they maintain (adding a feature, for instance), which inadvertently breaks compatibility with another library that someone else maintains. We want to prevent that from happening, so we can use specific versions of third-party code, just like we will use specific versions of our own code using version control (git). To do install the third-party libraries, use the command
 
-`pip install -r requirements`
+`pip install -r requirements.txt`
+
+PS: The library "uwsgi" doesn't work on Windows. Can be replaced by "waitress". 
+
 
 You should see a lot of output on the screen, and somewhere towards the bottom a message that says you have successfully installed, something like this: 
 
@@ -79,7 +86,12 @@ You should see a lot of output on the screen, and somewhere towards the bottom a
 
 At this point, you should finally be able to run the "hello, world!" website locally on your own computer. The command `uwsgi` will run a server. Try this command to start your server (e.g. run your website):
 
+On Linux use:
 > uwsgi --http :8080 --wsgi-file hello_world/hello_world.py
+
+On Windows use:
+> cd hello_world
+> waitress-serve --listen=*:8080 hello_world:application
 
 If you see something like `uwsgi: command not found`, something is wrong with your _environment_ (the way the computer is setup), not the code itself. Make sure you have activated a virtual environment, are running python3.8 or newer, and have installed the libraries listed in requirements.txt, as described above.
 
@@ -100,6 +112,10 @@ Building on the previous example, we will use a framework for building websites 
 
 Running a website using Flask using the same basic command, `uwsgi`, but requires a few more arguments:
 
+On Windows use:
+> cd sample_website
+> waitress-serve --listen=*:8080 website:app
+
 `uwsgi --http-socket 127.0.0.1:8080 --wsgi-file sample_website/website.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:8181 -H venv/`
 
 You should now be able to go http://localhost:8080 in your browser and see the Hello, Flask! Website
@@ -107,6 +123,7 @@ You should now be able to go http://localhost:8080 in your browser and see the H
 ![Your local Hello, Flask! website](./documentation/localhost_helloflask.png?raw=true)
 
 This command starts a server (`uwsgi`), specifies which IP address and port to run on (`http-socket`), chooses which file to run off of (`wsgi-file`), specifies what the application itself is called (`app`, defined in the file you are running), specifies a second automatic site for statistics (`stats`), tells your computer what resources (think processing) this application requests in order to run well (`processes` and `threads`), and lastly, selects a version of Python (`-H`). Whew. For now, you don't need to think too much about all of this. We will work with the file and the socket a bit in the coming weeks in particular.
+
 
 ### Congratulations! You are Running Your First Website!
 
