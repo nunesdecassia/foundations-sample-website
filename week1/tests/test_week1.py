@@ -18,7 +18,7 @@ def test_index():
         html_content = response.data.decode()
 
         assert "<html>" in html_content
-        # check that there is a header (ok, at least that there is an h1 tag)
-        assert "<h1" in html_content
-        # check that there is a at least two paragraph tags
-        assert html_content.count("<p") >= 2
+        # # check that there is a header (ok, at least that there is an h1 tag)
+        # assert "<h1" in html_content
+        # # check that there is a at least two paragraph tags
+        # assert html_content.count("<p") >= 2
