@@ -5,17 +5,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('concept.html', page_title="CODE Concept", color="color1")
 
 
-@app.route('/first-page')
+@app.route('/study')
 def first_page():
-    return render_template('first-page.html', page_title="First Template")
+    return render_template('studyprograms.html', page_title="CODE Study Programs", color="color3")
 
 
-@app.route('/second-page')
+@app.route('/admission')
 def second_page():
-    return render_template('second-page.html', page_title="Second Template")
+    return render_template('admission.html', page_title=" CODE Admission", color="color2")
 
 # add additonal pages here using a similar format as above
 
