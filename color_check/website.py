@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from color_check.controllers.get_color_code import get_color_code
+from color_check.controllers.log import log
+
 app = Flask(__name__)
 
 
@@ -25,6 +27,9 @@ def show_color():
     user_submitted_string = request.form['color']
     color_key = user_submitted_string.strip().lower()
     
+    # log user submitted string value
+    log("User submitted string: '{value}'".format(value=user_submitted_string))
+
     try:
         color_hex_code = get_color_code(color_key)
         return render_template(
@@ -34,12 +39,12 @@ def show_color():
             color_hex=color_hex_code
         )
     except:
+        log("[ERROR]: '{key}' is not a valid CSS color name.".format(key=color_key))
         return render_template(
             'invalid-color.html',
             page_title="Invalid Color",
             user_color=user_submitted_string
         )
-
 
 
 if __name__ == "__main__":
