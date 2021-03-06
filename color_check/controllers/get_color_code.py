@@ -7,10 +7,12 @@
 # letting them know that their color doesn't exist.
 
 import json
+from pathlib import Path
 
 css_color_names = []
+filename = Path('color_check/data/css-color-names.json').resolve()
 
-with open('color_check\data\css-color-names.json') as data:
+with open(filename) as data:
     css_color_names = json.load(data)
 
 def get_color_code(color_key):
