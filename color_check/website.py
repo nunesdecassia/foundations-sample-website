@@ -28,7 +28,7 @@ def show_color():
     color_key = user_submitted_string.strip().lower()
     
     # log user submitted string value
-    log("User submitted string: '{value}'".format(value=user_submitted_string))
+    log(f"User submitted string: '{user_submitted_string}'")
 
     try:
         color_hex_code = get_color_code(color_key)
@@ -39,7 +39,7 @@ def show_color():
             color_hex=color_hex_code
         )
     except:
-        log("[ERROR]: '{key}' is not a valid CSS color name.".format(key=color_key))
+        log(f"[ERROR]: '{color_key}' is not a valid CSS color name.")
         return render_template(
             'invalid-color.html',
             page_title="Invalid Color",
