@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p> Edit this file to show the name of the color and to render a square of that color itself! 
-    </p>
+    <h3>Congratulations! <span style="color: {{ color_hex }};">
+        {{ user_color.capitalize() }}
+    </span> is a nice color!</h3>
 
+    <div style="background-color: {{ color_hex }}; width: 200px; height: 200px;"></div>
 {% endblock %}
