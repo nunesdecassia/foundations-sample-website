@@ -23,12 +23,15 @@ def show_color():
     # - create a log.txt file which records (logs) the user requests. 
 
     user_submitted_string = request.form['color']
+    color_key = user_submitted_string.strip().lower()
+    
     try:
-        color_hex_code = get_color_code(user_submitted_string)
+        color_hex_code = get_color_code(color_key)
         return render_template(
             'color.html',
             page_title="Show Color",
-            color_hex_code=color_hex_code
+            user_color=color_key,
+            color_hex=color_hex_code
         )
     except:
         return render_template(
