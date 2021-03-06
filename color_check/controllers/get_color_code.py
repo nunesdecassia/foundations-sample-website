@@ -11,12 +11,12 @@ import json
 css_color_names = []
 
 with open('color_check\data\css-color-names.json') as data:
-  css_color_names = json.load(data)
+    css_color_names = json.load(data)
 
 def get_color_code(color_key):
-  # this is where you should add your logic to check the color.
-  # Open the file at data/css-color-names.json, and return the hex code
-  # The file can be considered as JSON format, or as a Python dictionary.
+    # this is where you should add your logic to check the color.
+    # Open the file at data/css-color-names.json, and return the hex code
+    # The file can be considered as JSON format, or as a Python dictionary.
 
-  return css_color_names[color_key]
+    return css_color_names[color_key]
 
