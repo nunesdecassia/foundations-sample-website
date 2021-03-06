@@ -1,7 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 
-Path("tmp/").mkdir(parents=True, exist_ok=True)
+Path("/tmp").mkdir(parents=True, exist_ok=True)
 
 def log(message):
 	now = datetime.now()
@@ -11,5 +11,5 @@ def log(message):
 	
 	print(final_message)
 
-	with open('tmp/log.txt', 'a+') as file:
+	with open('/tmp/log.txt', 'a+') as file:
 		file.write(final_message + '\n')
