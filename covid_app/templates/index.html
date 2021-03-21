@@ -15,9 +15,21 @@
         <input type="submit" value="Submit">
     </form>
 
-    <p> So far, I have met...
-        {{meetings}}
-    </p>
+    <h2> So far, I have met...</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+        {% for name, date, timestamp in meetings %}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{date}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
 
 
 {% endblock %}
